@@ -2,9 +2,9 @@ import random
 
 word_list = ["monkey", "cat", "building", "interstate", "buddy"]
 
-chosen_word = word_list[random.randint(0, 4)]
+chosen_word = random.choice(word_list)
 
-user_letter = input("Guess a letter: ")
+user_letter = input("Guess a letter: ").lower()
 
 contains_letter = chosen_word.find(user_letter)
 
