@@ -8,7 +8,9 @@ user_letter = input("Guess a letter: ")
 
 contains_letter = chosen_word.find(user_letter)
 
-if contains_letter == -1:
-    print("Letter not found")
-else:
-    print("Letter found")
+for i in chosen_word:
+    if i == user_letter:
+        print("Right")
+    else:
+        print("Wrong")
+
