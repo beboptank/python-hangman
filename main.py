@@ -1,5 +1,15 @@
 import random
 
+
+def create_blank_word(word):
+    blank_word = []
+
+    for letter in word:
+        blank_word.append("_")
+
+    return blank_word
+
+
 word_list = ["monkey", "cat", "building", "interstate", "buddy"]
 
 chosen_word = random.choice(word_list)
@@ -14,3 +24,6 @@ for i in chosen_word:
     else:
         print("Wrong")
 
+blank_word = create_blank_word(chosen_word)
+
+print(blank_word)
