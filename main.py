@@ -22,6 +22,7 @@ def display_graphics():
 |_| |_|\__,_|_| |_|\__, |_| |_| |_|\__,_|_| |_|
                     __/ |                      
                    |___/     """)
+    print("All ASCII art from https://ascii.co.uk/art/hangman")
 
 
 def hangman(num_of_guesses):
