@@ -1,15 +1,17 @@
 import random
+from string import Template
 
 
 def create_blank_word(word):
     # This function creates a list of underscores with a length equal to that of the "word" argument.
 
-    blank_word = []
+    solution = []
 
-    for letter in word:
-        blank_word.append("_")
+    for _ in word:
+        solution.append("_")
 
-    return blank_word
+    return solution
+
 
 def display_graphics():
     print("***WELCOME***")
@@ -27,7 +29,7 @@ def display_graphics():
 
 def hangman(num_of_guesses):
     if num_of_guesses == 0:
-        print(""" _____________
+        print("""     __________________
              |/      |
              |      
              |      
@@ -36,7 +38,7 @@ def hangman(num_of_guesses):
              |
          ____|____""")
     elif num_of_guesses == 1:
-        print(""" _____________
+        print("""    __________________
              |/      |
              |      (_)
              |      
@@ -45,7 +47,7 @@ def hangman(num_of_guesses):
              |
          ____|____""")
     elif num_of_guesses == 2:
-        print(""" _____________
+        print("""    __________________
              |/      |
              |      (_)
              |       |
@@ -54,7 +56,7 @@ def hangman(num_of_guesses):
              |
          ____|____""")
     elif num_of_guesses == 3:
-        print(""" _____________
+        print("""    __________________
              |/      |
              |      (_)
              |      \|
@@ -63,7 +65,7 @@ def hangman(num_of_guesses):
              |
          ____|____""")
     elif num_of_guesses == 4:
-        print(""" _____________
+        print("""    __________________
              |/      |
              |      (_)
              |      \|/
@@ -72,7 +74,7 @@ def hangman(num_of_guesses):
              |
          ____|____""")
     elif num_of_guesses == 5:
-        print(""" _____________
+        print("""    __________________
              |/      |
              |      (_)
              |      \|/
@@ -81,7 +83,7 @@ def hangman(num_of_guesses):
              |
          ____|____""")
     elif num_of_guesses == 6:
-        print(""" _____________
+        print("""    __________________
              |/      |
              |      (_)
              |      \|/
@@ -89,8 +91,13 @@ def hangman(num_of_guesses):
              |      | |
              |
          ____|____""")
+        print("***GAME OVER***")
+        print(answer_template)
+        print("***PLEASE TRY AGAIN***")
+        return
     else:
         print("Error. Please restart the game.")
+        return
 
 
 word_list = ["monkey", "cat", "building", "interstate", "buddy", "zebra", "cow", "puppy"]
@@ -103,13 +110,20 @@ blank_word = create_blank_word(chosen_word)
 
 display_graphics()
 
+guess_counter = 0
+
 while "_" in blank_word:
-    hangman(0)
+    hangman(guess_counter)
     user_letter = input("Guess a letter: ").lower()
     for i in range(len(chosen_word)):
         if chosen_word[i] == user_letter:
             blank_word[i] = user_letter
+            guess_counter += 1
     print(blank_word)
 
+answer = "".join(blank_word)
+answer_template = Template("The answer was ${answer}.")
 
-print(blank_word)
+print("***CONGRATULATIONS***")
+print("***YOU WIN***")
+print(answer_template)
