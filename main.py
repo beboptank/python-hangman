@@ -26,14 +26,72 @@ def display_graphics():
 
 
 def hangman(num_of_guesses):
-    print(""" _____________
-     |/      |
-     |      (_)
-     |      \|/
-     |       |
-     |      | |
-     |
- ____|____""")
+    if num_of_guesses == 0:
+        print(""" _____________
+             |/      |
+             |      
+             |      
+             |       
+             |      
+             |
+         ____|____""")
+    elif num_of_guesses == 1:
+        print(""" _____________
+             |/      |
+             |      (_)
+             |      
+             |       
+             |      
+             |
+         ____|____""")
+    elif num_of_guesses == 2:
+        print(""" _____________
+             |/      |
+             |      (_)
+             |       |
+             |       |
+             |      
+             |
+         ____|____""")
+    elif num_of_guesses == 3:
+        print(""" _____________
+             |/      |
+             |      (_)
+             |      \|
+             |       |
+             |      
+             |
+         ____|____""")
+    elif num_of_guesses == 4:
+        print(""" _____________
+             |/      |
+             |      (_)
+             |      \|/
+             |       |
+             |      
+             |
+         ____|____""")
+    elif num_of_guesses == 5:
+        print(""" _____________
+             |/      |
+             |      (_)
+             |      \|/
+             |       |
+             |      | 
+             |
+         ____|____""")
+    elif num_of_guesses == 6:
+        print(""" _____________
+             |/      |
+             |      (_)
+             |      \|/
+             |       |
+             |      | |
+             |
+         ____|____""")
+    else:
+        print("Error. Please restart the game.")
+
 
 word_list = ["monkey", "cat", "building", "interstate", "buddy", "zebra", "cow", "puppy"]
 
