@@ -1,5 +1,9 @@
 import random
 
+# Features to be added:
+# - add player lives (3 lives per session)
+# - prevent user from guessing a previously-guessed letter
+# - display to users a running tally of letters guessed
 
 def create_blank_word(word):
     # This function creates a list of underscores with a length equal to that of the "word" argument.
