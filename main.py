@@ -12,7 +12,7 @@ def create_blank_word(word):
     return blank_word
 
 
-word_list = ["monkey", "cat", "building", "interstate", "buddy"]
+word_list = ["monkey", "cat", "building", "interstate", "buddy", "zebra", "cow", "puppy"]
 
 chosen_word = random.choice(word_list)
 
