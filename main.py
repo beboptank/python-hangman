@@ -18,6 +18,8 @@ def create_blank_word(word):
 
 word_list = ["monkey", "cat", "building", "interstate", "buddy", "zebra", "cow", "puppy"]
 
+previous_letters = []
+
 chosen_word = random.choice(word_list)
 
 blank_word = create_blank_word(chosen_word)
@@ -106,10 +108,9 @@ def hangman(num_of_guesses):
         print("***GAME OVER***")
         print("The answer was " + chosen_word + ".")
         print("***PLEASE TRY AGAIN***")
-        return
     else:
         print("Error. Please restart the game.")
-        return
+        exit()
 
 
 # contains_letter = chosen_word.find(user_letter)
@@ -118,7 +119,16 @@ display_graphics()
 
 while "_" in blank_word:
     hangman(guess_counter)
-    user_letter = input("Guess a letter: ").lower()
+    if guess_counter < 6:
+        user_letter = input("Guess a letter: ").lower()
+    else:
+        exit()
+
+    # return here to finish logic branch for previously guessed letters
+    # if user_letter in previous_letters:
+    #     print("You have already chosen this letter. Please guess again.")
+    #     previous_letters.append(user_letter)
+    #     user_letter = input("Guess a letter: ").lower()
 
     if user_letter in chosen_word:
         for i in range(len(chosen_word)):
